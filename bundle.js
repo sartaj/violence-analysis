@@ -4,18 +4,61 @@
 },{}],2:[function(require,module,exports){
 'use strict';
 
+var _model = require('./model.js');
+
+var _model2 = _interopRequireDefault(_model);
+
+var _view = require('./view.js');
+
+var _view2 = _interopRequireDefault(_view);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var CONTAINER_ID = '#container';
+var $container = document.querySelector(CONTAINER_ID);
+console.log(_model2.default);
+$container.innerHTML = (0, _view2.default)(_model2.default);
+
+},{"./model.js":3,"./view.js":4}],3:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _data = require('./data.js');
 
-var dataStr = _interopRequireWildcard(_data);
+var _data2 = _interopRequireDefault(_data);
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var data = dataStr.default;
-
-var actedAlone = data.filter(function (item) {
+var actedAlone = _data2.default.filter(function (item) {
   return item.ACTED_ALONE_OR_IN_GROUP === 'Group';
 });
 
-console.log('acted alone', actedAlone);
+var model = {
+  actedAlone: actedAlone
+};
 
-},{"./data.js":1}]},{},[2]);
+exports.default = model;
+
+},{"./data.js":1}],4:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = render;
+function listView(act) {
+  return "<div>" + act.DATE + " | " + act.LOCATION + "</div>";
+}
+
+function render(props) {
+  return "\n  <h1>Acted Alone</h1>\n    " + props.actedAlone.map(function (act) {
+    return listView(act);
+  }).reduce(function (a, b) {
+    return a + b;
+  }) + "\n  ";
+}"";
+
+},{}]},{},[2]);

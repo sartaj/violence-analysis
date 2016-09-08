@@ -1,7 +1,7 @@
-import * as dataStr from './data.js';
-const data = dataStr.default;
+import model from './model.js';
+import view from './view.js';
 
-const actedAlone = data
-  .filter(item => item.ACTED_ALONE_OR_IN_GROUP === 'Group');
-
-console.log('acted alone', actedAlone);
+const CONTAINER_ID = '#container';
+const $container = document.querySelector(CONTAINER_ID);
+console.log(model);
+$container.innerHTML = view(model);
