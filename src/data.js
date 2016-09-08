@@ -1,4 +1,4 @@
-[{
+export default [{
     "ACTED_ALONE_OR_IN_GROUP": "Group",
     "ATTACK_ID": "20160726FRA1",
     "DATE": "2016-07-26",
