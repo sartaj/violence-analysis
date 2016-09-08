@@ -1,0 +1,35 @@
+{
+  "name": "violence-analysis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "xls-to-json.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sartaj/violence-analysis.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sartaj/violence-analysis/issues"
+  },
+  "homepage": "https://github.com/sartaj/violence-analysis#readme",
+  "devDependencies": {
+    "babel-preset-es2016": "^6.11.3",
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.1",
+    "eslint": "^3.0.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.10.2",
+    "eslint-plugin-jsx-a11y": "^2.0.0",
+    "eslint-plugin-react": "^5.2.2",
+    "eslintify": "^2.1.0",
+    "uglify-js": "^2.7.0",
+    "watchify": "^3.7.0"
+  },
+  "dependencies": {
+    "kefir": "^3.2.6"
+  }
+}
