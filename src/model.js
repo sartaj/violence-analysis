@@ -1,10 +1,9 @@
 import data from './data.js';
 
-const actedAlone = data
-  .filter(item => item.ACTED_ALONE_OR_IN_GROUP === 'Group');
+const results = data;
 
 const model = {
-  actedAlone: actedAlone
+  results,
 };
 
-export default model
+export default model;

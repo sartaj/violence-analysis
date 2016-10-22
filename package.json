@@ -7,7 +7,8 @@
     "test": "",
     "build-js": "browserify src/index.js -t [ eslintify --quiet ] -t [ babelify --presets [ es2015 ] ] | uglifyjs -c > bundle.js",
     "watch-js": "node_modules/.bin/watchify src/index.js -o bundle.js -t [ babelify --presets [ es2015 ] ]",
-    "dev": "npm run watch-js"
+    "dev": "npm run watch-js",
+    "data": "node xls-to-json.js > data.json"
   },
   "repository": {
     "type": "git",
@@ -24,16 +25,19 @@
     "babel-preset-react": "^6.11.1",
     "babelify": "^7.3.0",
     "browserify": "^13.0.1",
+    "csv-streamify": "^3.0.4",
     "eslint": "^3.0.1",
     "eslint-config-airbnb": "^9.0.1",
     "eslint-plugin-import": "^1.10.2",
     "eslint-plugin-jsx-a11y": "^2.0.0",
     "eslint-plugin-react": "^5.2.2",
     "eslintify": "^3.0.0",
+    "node-csv-json": "^0.2.1",
     "uglify-js": "^2.7.0",
     "watchify": "^3.7.0"
   },
   "dependencies": {
+    "csvtojson": "^1.0.3",
     "kefir": "^3.2.6"
   }
 }

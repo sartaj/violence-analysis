@@ -1,14 +1,14 @@
-function listView(act) {
-  return `<div>${act.DATE} | ${act.LOCATION}</div>`;
+function eventView(act) {
+  return Object.keys(act)
+    .reduce((a, b) => `${a}<li>${b}: ${act[b]}</li>`, '');
 }
 
 export default function render(props) {
   return `
-  <h1>Acted Alone</h1>
     ${
-      props.actedAlone
-      .map(act => listView(act))
-      .reduce((a, b) => a + b)
+      props.results
+      .map(act => eventView(act))
+      .reduce((a, b) => `${a}<ul>${b}</ul>`, '')
     }
   `;
-}``
+}
