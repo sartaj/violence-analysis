@@ -10,7 +10,8 @@
   "scripts": {
     "serve": "webpack-dev-server -d --progress --colors --inline",
     "start": "npm install && npm run serve",
-    "build": "NODE_ENV=production webpack"
+    "build": "NODE_ENV=production webpack",
+    "publish": "git checkout master; git checkout gh-pages; git rebase master; git push; git checkout master"
   },
   "author": "Sartaj",
   "license": "MIT",
@@ -32,7 +33,6 @@
     "postcss-import": "^8.1.2",
     "postcss-loader": "^1.0.0",
     "postcss-reporter": "^1.4.1",
-    "snabbdom-jsx": "^0.3.1",
     "style-loader": "^0.13.1",
     "stylelint-webpack-plugin": "^0.4.0",
     "webpack": "^1.13.1",
@@ -45,6 +45,7 @@
     "cyclic-router": "^2.1.2",
     "history": "^3.0.0",
     "ramda": "^0.21.0",
-    "xstream": "^5.0.6"
+    "xstream": "^5.0.6",
+    "snabbdom-jsx": "^0.3.1"
   }
 }

@@ -20,6 +20,10 @@ module.exports = {
   output: {
     filename: './dist/bundle.js'
   },
+  devtool: 'source-map',
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
   module: {
     loaders: [
       {
