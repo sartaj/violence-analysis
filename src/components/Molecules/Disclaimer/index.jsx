@@ -20,7 +20,7 @@ const linkStyle = {
 
 export default () =>
   <div style={disclaimerStyle}>
-    This Project Is Currently <strong>In Beta</strong><br /><br />
-    Help Contribute To <a href="https://docs.google.com/spreadsheets/d/1ZnARV43ctifkpb5M9lu13w-VO9wTGhOF-2rKZBTwQDA/edit?usp=sharing" style={linkStyle}>data</a> and <a href="http://github.com/sartaj/violence-analysis" rel="noreferrer noopener" target="_blank" style={linkStyle}>source code</a>
+    This Project Is Currently <strong>In Beta.</strong><br /><br />
+    Help Contribute To <a href="https://docs.google.com/spreadsheets/d/1ZnARV43ctifkpb5M9lu13w-VO9wTGhOF-2rKZBTwQDA/edit?usp=sharing" style={linkStyle}>data</a> and <a href="http://github.com/sartaj/violence-analysis" rel="noreferrer noopener" target="_blank" style={linkStyle}>source code.</a>
   </div>
 ;
