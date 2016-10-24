@@ -1,7 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
-
+const styleLintPlugin = require('stylelint-webpack-plugin');
 const ENV = process.env.NODE_ENV;
+
+const jsPlugin = ENV === 'production' ?
+  new webpack.optimize.UglifyJsPlugin({ minimize: true })
+  : new webpack.HotModuleReplacementPlugin();
 
 module.exports = {
   entry: (ENV === 'production' ?
@@ -24,13 +28,13 @@ module.exports = {
         include: __dirname,
         exclude: /node_modules/
       },
-      { test: /\.css$/, loader: 'style!css?module&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader' }
+      { test: /\.css$/, loader: 'style-loader!css-loader!postcss-loader' }
     ]
   },
   postcss: function () {
     return [
       require('postcss-import')({
-        path: path.join(__dirname, 'src', 'css'),
+        path: path.join(__dirname, 'src'),
         addDependencyTo: webpack // for hot-reloading
       }),
       require('postcss-cssnext')({
@@ -40,13 +44,14 @@ module.exports = {
       require('postcss-custom-media')()
     ];
   },
-  plugins: (ENV === 'production' ?
-    [
-      new webpack.optimize.UglifyJsPlugin({ minimize: true })
-    ]
-      :
-    [new webpack.HotModuleReplacementPlugin()]
-  ),
+  plugins: [
+    new styleLintPlugin({
+      configFile: path.join(__dirname, '.stylelintrc'),
+      context: path.join(__dirname, 'src'),
+      files: '**/*.?(sa|sc|c)ss'
+    }),
+    jsPlugin
+  ],
   devServer: {
     historyApiFallback: true,
     contentBase: './',

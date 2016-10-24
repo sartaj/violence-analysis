@@ -1,6 +1,8 @@
 import { div, ul } from '@cycle/dom';
 import { html } from 'snabbdom-jsx';
 
+import './index.css';
+
 const intent = sources => ({
   rawData: sources.rawData
 });
@@ -10,9 +12,9 @@ const model = action =>
     .map(results => results.slice(1, results.length + 1));
 
 const view = state => state.map(results =>
-  <div id="results">
+  <div id="results" >
     {results.map(act =>
-      <ul id="#{act.ATTACK_ID}">
+      <ul id={act.ATTACK_ID}>
         <div>{act.DATE} | {act['LOCATION ']}</div>
         <div>Casualties: {act.TOTAL_CASUALITIES}</div>
         <div>Deaths: {act.TOTAL_DEATHS}</div>
@@ -22,7 +24,6 @@ const view = state => state.map(results =>
         <div className="description">{act.DESCRIPTION}</div>
       </ul>
     )}
-    Hello World
   </div>
 );
 

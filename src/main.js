@@ -5,7 +5,7 @@ import { makeRouterDriver } from 'cyclic-router';
 
 import rawDataDriver from './drivers/rawDataDriver';
 
-import Router from './router.js';
+import Router from './router';
 
 function Main(sources) {
   const router = Router({ ...sources });
