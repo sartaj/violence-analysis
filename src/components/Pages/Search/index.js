@@ -1,4 +1,4 @@
-import Results from '../../Organism/Results';
+import Results from '../../Organism/Results/index.jsx';
 
 // import xs from 'xstream';
 // import { div, nav, a } from '@cycle/dom';
