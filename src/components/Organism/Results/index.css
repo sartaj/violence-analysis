@@ -1,7 +1,3 @@
-body {
-  margin: 0;
-  padding: 0;
-}
 #results {
   padding: 5vmin;
 }
@@ -28,4 +24,8 @@ body {
 }
 #results .description {
   padding: 2vmin;
+}
+#results .cover {
+  padding: 2vmin;
+  background: rgba(100,100,100,0.05);
 }

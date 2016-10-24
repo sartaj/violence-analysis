@@ -1,5 +1,5 @@
 import { merge, prop } from 'ramda';
-import Search from './components/Pages/Search';
+import Search from './components/Pages/Search/index.jsx';
 import NotFound from './components/Pages/NotFound';
 
 export default function Router(sources) {
