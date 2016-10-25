@@ -11,7 +11,9 @@ In terms of colloquial language and news media, a basic refrain that's heard is 
 
 Well, we plan to get more clarity on this topic, through good ol' data science and user experience design.
 
-This is an attempt to make the world's most comprehensive data initiative to understand violence that targets innocent people, hopefully giving reporters and regular people a tool to understand the complexities of this issue better.
+This is an attempt to make the world's most comprehensive data initiative to understand violence that targets innocent people.
+
+Hopefully this will give reporters and those who are interested a tool to understand the complexities our current global tensions.
 
 ## UX Roadmap
 
