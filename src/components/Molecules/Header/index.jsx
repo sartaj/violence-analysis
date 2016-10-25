@@ -29,9 +29,10 @@ const subtitleStyle = {
 
 export default () =>
   <div style={headerStyle}>
-    <div style={titleStyle}>The Violence Genome Project</div>
+    <div style={titleStyle}>Innocent Lives Matter</div>
     <div style={subtitleStyle}>
-      The World&apos;s Most Comprehensive Data Initiative To Understand Violence
+      The World&apos;s Most Comprehensive Open Data Initiative To
+      Understand Violence That Kills Innocent People
     </div>
   </div>
 ;

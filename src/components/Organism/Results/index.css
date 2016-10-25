@@ -1,5 +1,6 @@
 #results {
-  padding: 0 5vmin;
+  padding: 0 0vmin;
+  padding-right: 2vmin;
 }
 #results ul {
   width: 100%;

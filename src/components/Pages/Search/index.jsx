@@ -1,8 +1,10 @@
 import { html } from 'snabbdom-jsx';
 
-import Results from '../../Organism/Results';
 import Header from '../../Molecules/Header';
 import Disclaimer from '../../Molecules/Disclaimer';
+
+import Filters from '../../Organism/Filters';
+import Results from '../../Organism/Results';
 
 import './index.css';
 
@@ -14,13 +16,12 @@ const model = action =>
   action.rawData
     .map(results => results.slice(1, results.length + 1));
 
-const Filters = () => <div>&nbsp;</div>;
 const view = state => state.map(results =>
   <div>
     <Header />
     <div className="Filter-view" style={{ width: '30%', float: 'left' }}>
+      <Filters results={results} />
       <Disclaimer />
-      <Filters />
     </div>
     <div className="Results-view" style={{ width: '70%', float: 'left', paddingTop: '2vmin' }}>
       <Results results={results} />
