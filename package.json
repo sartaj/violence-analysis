@@ -11,7 +11,7 @@
     "serve": "webpack-dev-server -d --progress --colors --inline",
     "start": "npm install && npm run serve",
     "build": "NODE_ENV=production webpack",
-    "publish": "git checkout master; git checkout gh-pages; git rebase master; npm run build; git commit -am 'deploy to gh-pages'; git push; git checkout master; rm -rf dist/"
+    "publish": "git checkout master; git checkout gh-pages; git rebase master; npm run build; git add --all :/; git commit -am 'deploy to gh-pages'; git push; git checkout master; rm -rf dist/;"
   },
   "author": "Sartaj",
   "license": "MIT",
