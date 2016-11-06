@@ -1,3 +1,4 @@
+import xs from 'xstream';
 import { html } from 'snabbdom-jsx';
 
 import Header from '../../Molecules/Header';
@@ -9,22 +10,44 @@ import Results from '../../Organism/Results';
 import './index.css';
 
 const intent = sources => ({
-  rawData: sources.rawData
+  rawData: sources.rawData,
+  sources
 });
 
-const model = action =>
-  action.rawData
+const model = (action) => {
+  const rawDataModified = action.rawData
     .map(results => results.slice(1, results.length + 1));
+    // .map(results => results.slice(0, 2))
+    // .map(results => xs.fromArray(results))
+    // .flatten()
+    // .fold(results => results.map(result => xs.of(result)))
+    // .flatten();
+    // .fold((acc, results) => {
+    //   return results.map(result =>
+    //     acc.concat(result)
+    //   );
+    // }, []);
 
-const view = state => state.map(results =>
+  const state$ = xs.merge(xs.of(action.sources), rawDataModified);
+
+  state$
+    .addListener({
+      next: i => console.log(i),
+      error: err => console.error(err),
+      complete: () => console.log('completed')
+    });
+  return state$;
+};
+
+const view = state$ => state$.map(state =>
   <div>
     <Header />
     <div className="Filter-view" style={{ width: '30%', float: 'left' }}>
-      <Filters results={results} />
+      {/* <Filters results={state.results} /> */}
       <Disclaimer />
     </div>
     <div className="Results-view" style={{ width: '70%', float: 'left', paddingTop: '2vmin' }}>
-      <Results results={results} />
+      <Results results={state} />
     </div>
   </div>
 );

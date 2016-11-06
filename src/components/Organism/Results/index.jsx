@@ -3,9 +3,16 @@ import { html } from 'snabbdom-jsx';
 
 import './index.css';
 
-export default({ results }) => (
-  <div id="results">
-    {results.map(act =>
+export default({ results }) => {
+  console.log("TYPEOF", typeof results, results);
+  // results
+  //   .addListener({
+  //     next: i => console.log(i),
+  //     error: err => console.error(err),
+  //     complete: () => console.log('completed')
+  //   });
+
+  const vtree$ = results.map(act =>
       <ul id={act.ATTACK_ID} key={act.ATTACK_ID}>
         <div className="cover">
           <div>{act.DATE} | {act['LOCATION ']}</div>
@@ -17,6 +24,9 @@ export default({ results }) => (
         </div>
         <div className="description">{act.DESCRIPTION}</div>
       </ul>
-    )}
-  </div>
-);
+  );
+
+  console.log(vtree$)
+  return vtree$;
+
+};

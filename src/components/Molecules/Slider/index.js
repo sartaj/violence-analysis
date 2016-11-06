@@ -2,7 +2,7 @@ import xs from 'xstream';
 import isolate from '@cycle/isolate';
 import {div, h2, input, span} from '@cycle/dom';
 
-const LabeledSlider = sources => {
+const LabeledSlider = { sources } => {
   const domSource = sources.DOM;
   const props$ = sources.props;
 

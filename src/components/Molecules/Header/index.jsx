@@ -14,7 +14,7 @@ const titleStyle = {
   fontSize: '7vmin',
   fontWeight: 'bold',
   textTransform: 'uppercase',
-  fontFamily: 'Playfair Display'
+  fontFamily: '"Playfair Display", sans-serif'
 };
 
 const subtitleStyle = {
