@@ -1,0 +1,19 @@
+.Filter-container {
+  padding: 0.5vmin 2vmin;
+  border-left: 3px solid #666666;
+  margin: 2vmin;
+}
+.Filter-title {
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+.Filter-input {
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  height: initial;
+}
