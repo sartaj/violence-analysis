@@ -1,7 +1,7 @@
 import { html } from 'snabbdom-jsx';
 
 // import Slider from '../../Molecules/Slider';
-// import './index.css';
+import './index.css';
 
 const titleStyle = {
   fontSize: '1.5rem',
@@ -13,8 +13,17 @@ const filtersContainerStyle = {
 };
 
 export default({ results }) => (
-  <div id="filters" style={filtersContainerStyle} >
-    <h2 style={titleStyle} >By Casualties</h2>
+  <div id="filters" className="Filter-container" >
+    <h2 className="Filter-title" >Minimum Deaths</h2>
+    <input
+      className="Filter-input"
+      id="FilterMinDeaths"
+      type="number"
+      min="0"
+      max="1000"
+      name="min-deaths"
+      value="0"
+    />
     {/* <Slider /> */}
   </div>
 );

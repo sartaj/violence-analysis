@@ -1,8 +1,9 @@
-#results {
+body {}
+.Results-view {
   padding: 0 0vmin;
   padding-right: 2vmin;
 }
-#results ul {
+.Results-view ul {
   width: 100%;
   padding: 0;
   margin-left: 0;
@@ -12,21 +13,21 @@
   border-bottom: none;
   border-radius: 2px;
 }
-#results ul li {
+.Results-view ul li {
   list-style-type: none;
   padding: 1vmin 2vmin;
   overflow: hidden;
 }
-#results ul li:first-child {
+.Results-view ul li:first-child {
   padding-top: 2vmin;
 }
-#results ul li:last-child {
+.Results-view ul li:last-child {
   padding-bottom: 2vmin;
 }
-#results .description {
+.Results-view .description {
   padding: 2vmin;
 }
-#results .cover {
+.Results-view .cover {
   padding: 2vmin;
   background: rgba(100,100,100,0.05);
 }
