@@ -1,10 +1,12 @@
 import xs from 'xstream';
 
 export default (sources) => {
+  const filterMinDeathsEl$ = sources.DOM.select('#FilterMinDeaths');
   return {
     RAW_DATA_RETRIEVED: sources.rawData,
-    DEATH_COUNT_UPDATED: sources.DOM.select('#FilterMinDeaths')
-      .events('change')
-      .map(e => e.target.value)
+    DEATH_COUNT_UPDATED: xs.merge(
+      filterMinDeathsEl$.events('mouseup'),
+      filterMinDeathsEl$.events('keyup')
+    ).map(e => e.target.value)
   };
 };

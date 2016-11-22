@@ -1,6 +1,7 @@
 import { div, ul } from '@cycle/dom';
 // import virtualize from 'snabbdom-virtualize';
 // import { html } from 'snabbdom-jsx';
+
 import './index.css';
 
 export default({ results }) => {
