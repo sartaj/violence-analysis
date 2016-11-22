@@ -1,8 +1,8 @@
 import xs from 'xstream';
 import isolate from '@cycle/isolate';
-import {div, h2, input, span} from '@cycle/dom';
+import { div, h2, input, span } from '@cycle/dom';
 
-const LabeledSlider = sources => {
+const LabeledSlider = (sources) => {
   const domSource = sources.DOM;
   const props$ = sources.props;
 
@@ -18,7 +18,7 @@ const LabeledSlider = sources => {
         unit: props.unit,
         min: props.min,
         max: props.max,
-        value: value
+        value
       }))
       .startWith(props)
     )
@@ -28,9 +28,9 @@ const LabeledSlider = sources => {
   const vdom$ = state$
     .map(state =>
       div('.labeled-slider', [
-        span('.label', state.label + ' ' + state.value + state.unit),
+        span('.label', `${state.label}  ${state.value}${state.unit}`),
         input('.slider', {
-          attrs: {type: 'range', min: state.min, max: state.max, value: state.value}
+          attrs: { type: 'range', min: state.min, max: state.max, value: state.value }
         })
       ])
     );
@@ -43,7 +43,7 @@ const LabeledSlider = sources => {
   return sinks;
 };
 
-export default sources => {
+export default (sources) => {
   const weightProps$ = xs.of({
     label: 'Weight', unit: 'kg', min: 40, max: 150, value: 70
   });
@@ -51,8 +51,8 @@ export default sources => {
     label: 'Height', unit: 'cm', min: 140, max: 210, value: 170
   });
 
-  const weightSources = {DOM: sources.DOM, props: weightProps$};
-  const heightSources = {DOM: sources.DOM, props: heightProps$};
+  const weightSources = { DOM: sources.DOM, props: weightProps$ };
+  const heightSources = { DOM: sources.DOM, props: heightProps$ };
 
   const weightSlider = isolate(LabeledSlider)(weightSources);
   const heightSlider = isolate(LabeledSlider)(heightSources);
@@ -76,11 +76,11 @@ export default sources => {
       div([
         weightVDom,
         heightVDom,
-        h2('BMI is ' + bmi)
+        h2(`BMI is ${bmi}`)
       ])
     );
 
-  const sinks = {DOM: vdom$};
+  const sinks = { DOM: vdom$ };
 
   return sinks;
 };

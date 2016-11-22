@@ -4,8 +4,7 @@ import { div, ul } from '@cycle/dom';
 import './index.css';
 
 export default({ results }) => {
-
-  console.time("H-TREE");
+  // console.time('H-TREE');
   const vtreeH = results.map(act => (
       ul(`#${act.ATTACK_ID}`, {
         attrs: {
@@ -23,7 +22,7 @@ export default({ results }) => {
         div('.description', [`${act.DESCRIPTION}`])
       ])
     ));
-  console.timeEnd("H-TREE");
+  // console.timeEnd('H-TREE');
 
   // console.time("VIRTUALIZE-TREE");
   // const vtreeJSX = results.map(act =>

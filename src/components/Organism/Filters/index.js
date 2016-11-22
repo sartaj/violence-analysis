@@ -4,16 +4,7 @@ import Disclaimer from '../../Molecules/Disclaimer';
 
 import './index.css';
 
-const titleStyle = {
-  fontSize: '1.5rem',
-  color: 'rgba(0,0,0,0.6)'
-};
-
-const filtersContainerStyle = {
-  padding: '2vmin'
-};
-
-export default({ results }) => virtualize(`
+export default () => virtualize(`
   <div>
     <div id="filters" class="Filter-container" >
       <h2 class="Filter-title" >Minimum Deaths</h2>

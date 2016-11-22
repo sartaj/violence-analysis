@@ -16,7 +16,9 @@ import './index.css';
 //         ${Filters({ results: state })}
 //       </div>
 //       <div class="Results-view">
-//         <div style="font-size:4vmin;text-align:right"><strong>${state.data.length}</strong> RESULTS</div>
+//         <div style="font-size:4vmin;text-align:right">
+//          <strong>${state.data.length}</strong> RESULTS
+//         </div>
 //         ${Results({ results: state.data })}
 //       </div>
 //     </div>
