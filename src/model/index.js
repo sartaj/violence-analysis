@@ -9,7 +9,7 @@ function modifyState(intent) {
   const deathCountUpdated = rawDataRetreived
     .map(state => intent.DEATH_COUNT_UPDATED
       .map(v => ({
-        data: state.data.filter(result => parseInt(result.TOTAL_DEATHS, 10) >= v)
+        data: state.data.filter(result => parseInt(result.TOTAL_DEATHS, 10) >= parseInt(v, 10))
       }))).flatten();
 
   // const deathCountUpdated = intent.DEATH_COUNT_UPDATED
@@ -19,7 +19,7 @@ function modifyState(intent) {
 
   deathCountUpdated
     .addListener({
-      next: i => console.log('state listen', i),
+      next: i => { console.log(`%c DATA RESULTS:  ${i.data.length}`, 'font-weight: bold'); },
       error: err => console.error(err),
       complete: () => console.log('completed')
     });
@@ -32,11 +32,5 @@ function modifyState(intent) {
 
 export default function model(intent) {
   const stateModified = modifyState(intent);
-  // stateModified
-  //   .addListener({
-  //     next: i => console.log('state listen', i),
-  //     error: err => console.error(err),
-  //     complete: () => console.log('completed')
-  //   });
   return stateModified;
 }
