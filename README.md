@@ -1,4 +1,4 @@
-# Innocent Lives Matter Project
+# A comprehensive data and user experience initiative to understand violence.
 
 ## Background
 * What percentage of terrorists who claim Islam are from a middle class background?
