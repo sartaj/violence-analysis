@@ -9,16 +9,14 @@ import Results from '../../Organism/Results';
 import './index.css';
 
 const view = state$ => state$.map((state) => {
-
-  const bob = Results({ results: state.data });
-
   const vtree$ = virtualize(`
     <div>
       <div class="Filter-view">
         ${Filters({ results: state })}
       </div>
       <div class="Results-view">
-        ${bob}
+        <div style="font-size:4vmin;text-align:right"><strong>${state.data.length}</strong> RESULTS</div>
+        ${Results({ results: state.data })}
       </div>
     </div>
   `);
