@@ -13,7 +13,7 @@ const filtersContainerStyle = {
   padding: '2vmin'
 };
 
-export default({ results }) => (`
+export default({ results }) => virtualize(`
   <div>
     <div id="filters" class="Filter-container" >
       <h2 class="Filter-title" >Minimum Deaths</h2>

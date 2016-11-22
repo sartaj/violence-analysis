@@ -10,3 +10,9 @@
   float: left;
   padding-top: 2vmin;
 }
+
+.Results-count {
+  font-size: 4vmin;
+  text-align: right;
+  text-transform: uppercase;
+}
