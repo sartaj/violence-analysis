@@ -18,5 +18,12 @@ export default function Router(sources) {
 
   const sinks = merge(sources, { DOM: vdom$ });
 
+  // vdom$
+  //   .addListener({
+  //     next: i => { console.log(i); },
+  //     error: err => console.error(err),
+  //     complete: () => console.log('completed')
+  //   });
+
   return sinks;
 }

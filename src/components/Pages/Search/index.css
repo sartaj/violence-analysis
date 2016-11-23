@@ -1,1 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+
+.Filter-view {
+  width: 30%;
+  float: left;
+}
+
+.Results-view {
+  width: 70%;
+  float: left;
+  padding-top: 2vmin;
+}
+
+.Results-count {
+  font-size: 4vmin;
+  text-align: right;
+  text-transform: uppercase;
+}
