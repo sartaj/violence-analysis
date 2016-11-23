@@ -31,3 +31,9 @@ body {}
   padding: 2vmin;
   background: rgba(100,100,100,0.05);
 }
+.NoResults {
+  font-size: 4vmin;
+  text-align: right;
+  text-transform: uppercase;
+  font-weight: bold;
+}

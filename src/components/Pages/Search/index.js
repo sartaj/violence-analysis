@@ -36,7 +36,7 @@ const view = state$ => state$.map((state) => {
     }, [
       div([
         div('.Results-count', [
-          strong(state.data.length),
+          state.data.length > 0 ? strong(state.data.length) : strong('0'),
           span(' Results')
         ]),
         ...Results({ results: state.data })
