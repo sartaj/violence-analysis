@@ -45,7 +45,7 @@
     "cyclic-router": "^3.0.1",
     "history": "3.0.0",
     "logdown": "^1.4.2",
-    "ramda": "^0.22.1",
+    "ramda": "^0.27.2",
     "snabbdom-virtualize": "^0.6.0",
     "switch-path": "^1.1.8",
     "xstream": "^8.0.0"
